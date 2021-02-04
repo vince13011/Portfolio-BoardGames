@@ -1,0 +1,24 @@
+{
+  "name": "portfolio-boardgames",
+  "version": "1.0.0",
+  "description": "Une API REST pour gérer une collection de jeux de société",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rest",
+    "sqitch",
+    "joi",
+    "pg",
+    "node",
+    "express"
+  ],
+  "author": "Vincent GIGLIO",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "pg": "^8.5.1"
+  }
+}
