@@ -7,4 +7,5 @@ const { Pool } = require('pg');
 // PGDATABASE pour la base de données
 const db = new Pool();
 
+
 module.exports = db;
