@@ -7,7 +7,7 @@
 - Node 10+
   - Express
   - Joi
-- PostgreSQL 11+
+  - PostgreSQL 11+
   - Sqitch
 
 ## Structure des données

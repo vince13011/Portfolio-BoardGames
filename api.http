@@ -1,0 +1,28 @@
+@protocol= http
+@domainname= localhost
+@port= {{$dotenv PORT}}
+@path=v1
+@baseUrl = {{protocol}}://{{domainname}}:{{port}}/{{path}}
+
+### GET /boardgames
+
+
+
+### POST /boardgames
+
+POST {{baseUrl}}/boardgames
+Content-Type: application/json
+
+{
+    "name": "Cluedo",
+    "minAge": "8",
+    "minPlayers": "3",
+    "maxPlayers": "6",
+    "type": "déduction",
+    "note": "4",
+    "duration": {
+        "hours":2,
+        "minutes":40
+    },
+    "creator": "Anthony Pratt"
+}
