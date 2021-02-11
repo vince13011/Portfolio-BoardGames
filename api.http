@@ -26,3 +26,23 @@ Content-Type: application/json
     },
     "creator": "Anthony Pratt"
 }
+
+
+### PATCH /boardgames
+
+PATCH {{baseUrl}}/boardgames/1
+Content-Type: application/json
+
+{
+    "name": "monopoly",
+    "minAge": "8",
+    "minPlayers": "2",
+    "maxPlayers": "3",
+    "type": "déduction",
+    "note": "4",
+    "duration": {
+        "hours":1,
+        "minutes":10
+    },
+    "creator": "Anthony Pratt"
+}

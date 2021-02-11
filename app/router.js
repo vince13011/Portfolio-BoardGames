@@ -7,7 +7,8 @@ const boardgameSchema = require('./schemas/boardgames');
 const router = Router();
 
 router.get('/boardgames', boardgameController.allBoardgames);
-router.get('/boardgames/:id',boardgameController.findOneBoardGame);
 router.post('/boardgames', validateBody(boardgameSchema), boardgameController.newBoardgame);
+router.get('/boardgames/:id',boardgameController.findOneBoardGame);
+router.patch('/boardgames/:id',boardgameController.updateOneBoardGame)
 
 module.exports = router;

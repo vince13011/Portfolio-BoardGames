@@ -6,6 +6,7 @@ const boardgameController = {
 
         response.json(games);
     },
+
     findOneBoardGame: async(request,response) =>{
 
         const id = request.params.id;
@@ -38,6 +39,13 @@ const boardgameController = {
         // la certitude que tout s'est bien passé
         // l'id
         response.json(newGame);
+    },
+
+    updateOneBoardGame: async (request,response) =>{
+        const id = request.params.id;
+        const data= request.body;
+        const result = await Boardgame.updateById(id, data)
+        response.json(result);
     }
 
 };
