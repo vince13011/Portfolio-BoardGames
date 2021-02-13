@@ -5,3 +5,4 @@ init 2021-02-04T18:32:04Z vincent Giglio <vgiglio13@gmail.com> # Création de la
 check_players 2021-02-05T08:50:31Z vincent Giglio <vgiglio13@gmail.com> # ajout d'une contrainte check pour min < max coté players
 boardgame/insert 2021-02-05T09:03:20Z vincent Giglio <vgiglio13@gmail.com> # création de la fonction new_boardgame
 boardgame/insert_Json 2021-02-05T11:10:24Z vincent Giglio <vgiglio13@gmail.com> # création de la fonction new_boardgame version Json
+boardgame/update_function 2021-02-13T18:25:02Z vincent Giglio <vgiglio13@gmail.com> # ajout d'une fonction update pour la route patch/boardgames/:id

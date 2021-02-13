@@ -14,11 +14,11 @@ POST {{baseUrl}}/boardgames
 Content-Type: application/json
 
 {
-    "name": "Cluedo",
+    "name": "risk",
     "minAge": "8",
-    "minPlayers": "3",
+    "minPlayers": "2",
     "maxPlayers": "6",
-    "type": "déduction",
+    "type": "familial",
     "note": "4",
     "duration": {
         "hours":2,
@@ -34,7 +34,7 @@ PATCH {{baseUrl}}/boardgames/1
 Content-Type: application/json
 
 {
-    "name": "monopoly",
+    "name": "micado",
     "minAge": "8",
     "minPlayers": "2",
     "maxPlayers": "3",

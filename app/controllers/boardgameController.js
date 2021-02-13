@@ -44,6 +44,10 @@ const boardgameController = {
     updateOneBoardGame: async (request,response) =>{
         const id = request.params.id;
         const data= request.body;
+        if (typeof data.duration === "object") {
+            // on fait un petit calcul pour retrouver le format entier en minutes
+            data.duration = 60 * data.duration.hours + data.duration.minutes;
+        }
         const result = await Boardgame.updateById(id, data)
         response.json(result);
     }

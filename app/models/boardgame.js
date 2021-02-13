@@ -54,16 +54,7 @@ class Boardgame {
     }
 
     static async updateById(id, data) {
-        const { rows }= await db.query(`UPDATE boardgame
-                                    SET "name" = $2, 
-                                        min_age = $3,
-                                        min_players = $4,
-                                        max_players = $5,
-                                        type = $6,
-                                        note = $7,
-                                        duration = $8 ,                          
-                                        creator = $9
-                                    WHERE id = $1 RETURNING *;`,[id, data.name, data.minAge, data.minPlayers, data.maxPlayers, data.type, data.note, data.duration, data.creator]);
+        const { rows }= await db.query(`SELECT * FROM update_boardgame($1, $2);`,[data,id]);
         
         return new Boardgame(rows[0]);
     }
