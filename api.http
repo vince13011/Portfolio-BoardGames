@@ -5,8 +5,11 @@
 @baseUrl = {{protocol}}://{{domainname}}:{{port}}/{{path}}
 
 ### GET /boardgames
+GET {{baseUrl}}/boardgames
 
 
+### GET /boardgames/:id
+GET {{baseUrl}}/boardgames/4
 
 ### POST /boardgames
 
@@ -14,7 +17,7 @@ POST {{baseUrl}}/boardgames
 Content-Type: application/json
 
 {
-    "name": "risk",
+    "name": "7 familles",
     "minAge": "8",
     "minPlayers": "2",
     "maxPlayers": "6",
@@ -28,7 +31,7 @@ Content-Type: application/json
 }
 
 
-### PATCH /boardgames
+### PATCH /boardgames/:id
 
 PATCH {{baseUrl}}/boardgames/1
 Content-Type: application/json
@@ -46,3 +49,7 @@ Content-Type: application/json
     },
     "creator": "Anthony Pratt"
 }
+
+### DELETE /boardgames/:id
+
+ DELETE {{baseUrl}}/boardgames/5

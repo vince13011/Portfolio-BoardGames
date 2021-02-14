@@ -9,6 +9,7 @@ const router = Router();
 router.get('/boardgames', boardgameController.allBoardgames);
 router.post('/boardgames', validateBody(boardgameSchema), boardgameController.newBoardgame);
 router.get('/boardgames/:id',boardgameController.findOneBoardGame);
-router.patch('/boardgames/:id',boardgameController.updateOneBoardGame)
+router.patch('/boardgames/:id',boardgameController.updateOneBoardGame);
+router.delete('/boardgames/:id',boardgameController.deleteOneBoardGame);
 
 module.exports = router;

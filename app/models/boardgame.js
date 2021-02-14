@@ -67,6 +67,11 @@ class Boardgame {
         this.id = rows[0].id;
     }
 
+    static async deleteById(id) {
+        const { rows }= await db.query(`DELETE FROM boardgame
+                                        WHERE id = $1`,[id])
+    }
+
      
 }
 
