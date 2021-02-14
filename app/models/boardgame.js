@@ -49,13 +49,18 @@ class Boardgame {
 
     static async findOne(id) {
         const { rows } = await db.query('SELECT * FROM boardgame WHERE id = $1;', [id]);
+        if (!rows[0]){
+           throw new Error(`le jeu avec l'id ${id} n'existe pas `)
+        }
 
         return new Boardgame(rows[0]);
     }
 
     static async updateById(id, data) {
+        await Boardgame.findOne(id)
         const { rows }= await db.query(`SELECT * FROM update_boardgame($1, $2);`,[data,id]);
         
+
         return new Boardgame(rows[0]);
     }
 
@@ -68,6 +73,9 @@ class Boardgame {
     }
 
     static async deleteById(id) {
+
+        await Boardgame.findOne(id)
+
         const { rows }= await db.query(`DELETE FROM boardgame
                                         WHERE id = $1`,[id])
     }
