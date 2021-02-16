@@ -8,16 +8,18 @@
 GET {{baseUrl}}/boardgames
 
 
+
 ### GET /boardgames/:id
-GET {{baseUrl}}/boardgames/4
+GET {{baseUrl}}/boardgames/1
+
+
 
 ### POST /boardgames
-
 POST {{baseUrl}}/boardgames
 Content-Type: application/json
 
 {
-    "name": "7 familles",
+    "name": "trivial poursuite",
     "minAge": "8",
     "minPlayers": "2",
     "maxPlayers": "6",
@@ -31,13 +33,13 @@ Content-Type: application/json
 }
 
 
-### PATCH /boardgames/:id
 
-PATCH {{baseUrl}}/boardgames/1
+### PUT /boardgames/:id
+PUT {{baseUrl}}/boardgames/1
 Content-Type: application/json
 
 {
-    "name": "micado",
+    "name": "updateGame",
     "minAge": "8",
     "minPlayers": "2",
     "maxPlayers": "3",
@@ -50,6 +52,6 @@ Content-Type: application/json
     "creator": "Anthony Pratt"
 }
 
-### DELETE /boardgames/:id
 
- DELETE {{baseUrl}}/boardgames/5
+### DELETE /boardgames/:id
+DELETE {{baseUrl}}/boardgames/2

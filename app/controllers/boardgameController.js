@@ -10,10 +10,14 @@ const boardgameController = {
     findOneBoardGame: async(request,response) =>{
 
         const id = request.params.id;
-
+        try{
         const game = await Boardgame.findOne(id);
 
         response.json(game);
+        }
+        catch(err){
+            response.status(404).json(err.message);
+        }
         
     },
 
@@ -42,7 +46,8 @@ const boardgameController = {
 
     updateOneBoardGame: async (request,response) =>{
         //je récupère l'id pour le mettre dans le Where de la requète SQL
-        const id = request.params.id;
+        const {id} = request.params;
+       
 
         // je récupère le body qui contient les modifications de notre enregistrement
         const data= request.body;
@@ -51,19 +56,37 @@ const boardgameController = {
             // on fait un petit calcul pour retrouver le format entier en minutes
             data.duration = 60 * data.duration.hours + data.duration.minutes;
         }
-        //je passe en argument les deux constantes qui contiennent ce dont j'ai besoin pour ma requète
-        const result = await Boardgame.updateById(id, data)
+
+        try{
+
+            const theBoardgame = await Boardgame.findOne(id);    
+            
+            const result = await theBoardgame.updateById(data);
         
-        response.json(result);
+            response.json(result);
+        }
+        catch(err){
+            
+            response.status(404).json(err.message);
+        }
     },
 
     deleteOneBoardGame: async (request,response) =>{
          //je récupère l'id pour le mettre dans le Where de la requète SQL
-         const id = request.params.id;
-
-        await Boardgame.deleteById(id);
+         const {id} = request.params;
+        try{
+        const theBoardgame = await Boardgame.findOne(id);
+        
+        
+        await theBoardgame.deleteById();
          
         response.json(`Le jeu avec l'id ${id} a bien était supprimé`);
+        }
+        catch(err){
+            response.status(404).json(`Le jeu avec l'id ${id} n'existe pas ou a déjà était supprimé`);
+        }
+
+        
         
     }
 

@@ -1,0 +1,59 @@
+[33mcommit 0c8d7d3123ef57645a8da28191687f469c2f2160[m[33m ([m[1;36mHEAD -> [m[1;32mgestion_erreur[m[33m, [m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: vince13011 <vincent.giglio@hotmail.fr>
+Date:   Sun Feb 14 12:58:31 2021 +0100
+
+    ajout d'une route delete boardgames/:id
+
+[33mcommit 09b68c3b4435b5a6b43b581c2aae1718f98f9a2d[m[33m ([m[1;32mpatch/boardgame[m[33m)[m
+Author: vince13011 <vincent.giglio@hotmail.fr>
+Date:   Sat Feb 13 22:57:21 2021 +0100
+
+     creation d'une fonction sql update_boardgame
+
+[33mcommit 7b2fb3c49da282c93f1728b0f071e5f82aeac537[m
+Author: vince13011 <vincent.giglio@hotmail.fr>
+Date:   Thu Feb 11 19:05:05 2021 +0100
+
+    route patch mise en place
+
+[33mcommit be9f81a4db097903a4aa3eca5e51e947e219e969[m
+Author: vince13011 <vincent.giglio@hotmail.fr>
+Date:   Thu Feb 11 16:25:51 2021 +0100
+
+    ajout d'une route post/boardgames
+
+[33mcommit 52c5b56dc22f141ba4f99651b815024108b7faf9[m
+Author: vince13011 <vincent.giglio@hotmail.fr>
+Date:   Thu Feb 4 22:08:54 2021 +0100
+
+    Création d'une route GET  /boardgames/:id
+
+[33mcommit 4941bc5f6f40489e3f35a24b142a660ed7d14a76[m
+Author: vince13011 <vincent.giglio@hotmail.fr>
+Date:   Thu Feb 4 21:21:17 2021 +0100
+
+    Initialisation de la table boardgame et du domain posint
+
+[33mcommit c37724d14f8988c79d365b0be0633e80ac727acb[m
+Author: vince13011 <vincent.giglio@hotmail.fr>
+Date:   Thu Feb 4 19:07:50 2021 +0100
+
+    Controllers et models
+
+[33mcommit 09f95ec6754ccca2487979cb159759ee5ae4bb62[m
+Author: vince13011 <vincent.giglio@hotmail.fr>
+Date:   Thu Feb 4 19:03:52 2021 +0100
+
+    Création du router et de la connection à la base de données
+
+[33mcommit 769f9344c354e93421aff5bf3d58a4e784b89eb4[m
+Author: vince13011 <vincent.giglio@hotmail.fr>
+Date:   Thu Feb 4 19:00:41 2021 +0100
+
+    Mise en place de Sqitch et d'un dossier migrations
+
+[33mcommit 0de2d80a44e339a284dd91ca535bf111527a69d4[m
+Author: vince13011 <vincent.giglio@hotmail.fr>
+Date:   Thu Feb 4 18:52:41 2021 +0100
+
+    Mise en place Express et dépendances
