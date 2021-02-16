@@ -19,7 +19,7 @@ POST {{baseUrl}}/boardgames
 Content-Type: application/json
 
 {
-    "name": "trivial poursuite",
+    "name": "mordeur",
     "minAge": "8",
     "minPlayers": "2",
     "maxPlayers": "6",
