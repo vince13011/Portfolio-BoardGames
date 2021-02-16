@@ -56,10 +56,12 @@ class Boardgame {
         return new Boardgame(rows[0]);
     }
 
-    static async updateById(id, data) {
-        await Boardgame.findOne(id)
-        const { rows }= await db.query(`SELECT * FROM update_boardgame($1, $2);`,[data,id]);
+    async updateById(data) {
         
+        const { rows }= await db.query(`SELECT * FROM update_boardgame($1,$2);`,[data,this.id]);
+        if (rows[0].id === null){
+            throw new Error(`le jeu avec l'id ${this.id} n'existe pas `)
+         }
 
         return new Boardgame(rows[0]);
     }
@@ -72,12 +74,11 @@ class Boardgame {
         this.id = rows[0].id;
     }
 
-    static async deleteById(id) {
+      async deleteById() {
 
-        await Boardgame.findOne(id)
 
         const { rows }= await db.query(`DELETE FROM boardgame
-                                        WHERE id = $1`,[id])
+                                        WHERE id = $1`,[this.id]);
     }
 
      

@@ -10,7 +10,7 @@ router.get('/boardgames', boardgameController.allBoardgames);
 router.post('/boardgames', validateBody(boardgameSchema), boardgameController.newBoardgame);
 
 router.get('/boardgames/:id',boardgameController.findOneBoardGame);
-router.patch('/boardgames/:id',validateBody(boardgameSchema),boardgameController.updateOneBoardGame);
+router.put('/boardgames/:id',validateBody(boardgameSchema),boardgameController.updateOneBoardGame);
 router.delete('/boardgames/:id',boardgameController.deleteOneBoardGame);
 
 // ici, une 404 pour l'API

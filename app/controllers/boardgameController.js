@@ -46,7 +46,8 @@ const boardgameController = {
 
     updateOneBoardGame: async (request,response) =>{
         //je récupère l'id pour le mettre dans le Where de la requète SQL
-        const id = request.params.id;
+        const {id} = request.params;
+       
 
         // je récupère le body qui contient les modifications de notre enregistrement
         const data= request.body;
@@ -57,10 +58,12 @@ const boardgameController = {
         }
 
         try{
-        //je passe en argument les deux constantes qui contiennent ce dont j'ai besoin pour ma requète
-        const result = await Boardgame.updateById(id, data)
+
+            const theBoardgame = await Boardgame.findOne(id);    
+            
+            const result = await theBoardgame.updateById(data);
         
-        response.json(result);
+            response.json(result);
         }
         catch(err){
             
@@ -70,20 +73,21 @@ const boardgameController = {
 
     deleteOneBoardGame: async (request,response) =>{
          //je récupère l'id pour le mettre dans le Where de la requète SQL
-         const id = request.params.id;
-
+         const {id} = request.params;
         try{
-
-        await Boardgame.deleteById(id);
+        const theBoardgame = await Boardgame.findOne(id);
+        
+        
+        await theBoardgame.deleteById();
          
         response.json(`Le jeu avec l'id ${id} a bien était supprimé`);
-
         }
-       
         catch(err){
-            
-            response.status(404).json(err.message);
+            response.status(404).json(`Le jeu avec l'id ${id} n'existe pas ou a déjà était supprimé`);
         }
+
+        
+        
     }
 
 };
