@@ -20,7 +20,7 @@ const cacheGenerator = (options) => {
         cache: async (request, response, next) => {
            
 
-            const theKey = "oblog:" + request.originalUrl;
+            const theKey = "boardgame:" + request.originalUrl;
 
             if (await redis.exists(theKey)) {
                 
