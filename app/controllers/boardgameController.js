@@ -44,7 +44,7 @@ const boardgameController = {
         response.json(newGame);
     },
 
-    updateOneBoardGame: async (request,response) =>{
+    replaceOneBoardGame: async (request,response) =>{
         //je récupère l'id pour le mettre dans le Where de la requète SQL
         const {id} = request.params;
        
@@ -84,10 +84,44 @@ const boardgameController = {
         }
         catch(err){
             response.status(404).json(`Le jeu avec l'id ${id} n'existe pas ou a déjà était supprimé`);
+        } 
+    },
+
+    updateOneBoardGame: async (request,response) =>{
+        const { id } = request.params;
+        const data = request.body;
+
+        if (typeof data.duration === "object") {
+            // on fait un petit calcul pour retrouver le format entier en minutes
+            data.duration = 60 * data.duration.hours + data.duration.minutes;
         }
 
-        
-        
+        try{
+            const theBoardgame = await Boardgame.findOne(id);
+            
+             if(data.id){
+                delete(data.id)
+            }
+            const newdata = theBoardgame;
+            for (const element in data) {
+                if (typeof newdata[element] !== 'undefined') {
+                    newdata[element] = data[element];
+                }
+            }
+            if (typeof newdata.duration === "object") {
+                // on fait un petit calcul pour retrouver le format entier en minutes
+                newdata.duration = 60 * newdata.duration.hours + newdata.duration.minutes;
+            }
+
+            const result = await theBoardgame.updateById(newdata);
+            response.json(result);
+        }
+        catch(err){
+            response.status(404).json(`Le jeu avec l'id ${id} n'existe pas ou a déjà était supprimé`); 
+        }
+
+
+
     }
 
 };

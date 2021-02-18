@@ -10,7 +10,7 @@ GET {{baseUrl}}/boardgames
 
 
 ### GET /boardgames/:id
-GET {{baseUrl}}/boardgames/1
+GET {{baseUrl}}/boardgames/6
 
 
 
@@ -19,7 +19,7 @@ POST {{baseUrl}}/boardgames
 Content-Type: application/json
 
 {
-    "name": "mordeur",
+    "name": "mord",
     "minAge": "8",
     "minPlayers": "2",
     "maxPlayers": "6",
@@ -35,15 +35,15 @@ Content-Type: application/json
 
 
 ### PUT /boardgames/:id
-PUT {{baseUrl}}/boardgames/1
+PUT {{baseUrl}}/boardgames/6
 Content-Type: application/json
 
 {
     "name": "updateGame",
-    "minAge": "8",
+    "minAge":"4",
     "minPlayers": "2",
     "maxPlayers": "3",
-    "type": "déduction",
+    "type": "familial",
     "note": "4",
     "duration": {
         "hours":1,
@@ -54,4 +54,17 @@ Content-Type: application/json
 
 
 ### DELETE /boardgames/:id
-DELETE {{baseUrl}}/boardgames/2
+DELETE {{baseUrl}}/boardgames/5
+
+
+### PATCH /boardgames/:id
+PATCH {{baseUrl}}/boardgames/6
+Content-Type: application/json
+
+{
+    "id" :3,
+    "name": "SEAB",
+    "trompette":"caca",
+    "minAge":"6"
+    
+}

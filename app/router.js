@@ -12,10 +12,11 @@ const { cache, flush } = cacheGenerator({
 const router = Router();
 
 router.get('/boardgames',cache,boardgameController.allBoardgames);
-router.post('/boardgames', flush, validateBody(boardgameSchema), boardgameController.newBoardgame);
+router.post('/boardgames',flush, validateBody(boardgameSchema), boardgameController.newBoardgame);
 
 router.get('/boardgames/:id',cache,boardgameController.findOneBoardGame);
-router.put('/boardgames/:id',flush, validateBody(boardgameSchema),boardgameController.updateOneBoardGame);
+router.patch('/boardgames/:id',flush,boardgameController.updateOneBoardGame)
+router.put('/boardgames/:id',flush, validateBody(boardgameSchema),boardgameController.replaceOneBoardGame);
 router.delete('/boardgames/:id',flush, boardgameController.deleteOneBoardGame);
 
 // ici, une 404 pour l'API
