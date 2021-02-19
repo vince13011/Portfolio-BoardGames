@@ -35,15 +35,15 @@ Content-Type: application/json
 
 
 ### PUT /boardgames/:id
-PUT {{baseUrl}}/boardgames/6
+PUT {{baseUrl}}/boardgames/13
 Content-Type: application/json
 
 {
-    "name": "updateGame",
+    "name": "updateGam",
     "minAge":"4",
     "minPlayers": "2",
     "maxPlayers": "3",
-    "type": "familial",
+    "type": "education",
     "note": "4",
     "duration": {
         "hours":1,
@@ -58,7 +58,7 @@ DELETE {{baseUrl}}/boardgames/5
 
 
 ### PATCH /boardgames/:id
-PATCH {{baseUrl}}/boardgames/6
+PATCH {{baseUrl}}/boardgames/13
 Content-Type: application/json
 
 {

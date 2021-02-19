@@ -6,7 +6,7 @@ const boardgameSchema = require('./schemas/boardgames');
 
 const cacheGenerator = require('./services/cacheGenerator');
 const { cache, flush } = cacheGenerator({
-    ttl: 10000
+    ttl: 10
 });
 
 const router = Router();

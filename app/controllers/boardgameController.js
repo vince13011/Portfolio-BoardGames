@@ -1,6 +1,7 @@
 const Boardgame = require('../models/boardgame');
 
 const boardgameController = {
+
     allBoardgames : async (request, response) => {
         const games = await Boardgame.findAll();
 
@@ -40,7 +41,6 @@ const boardgameController = {
 
         // sans await, il va me manquer
         // la certitude que tout s'est bien passé
-        // l'id
         response.json(newGame);
     },
 
@@ -119,9 +119,6 @@ const boardgameController = {
         catch(err){
             response.status(404).json(`Le jeu avec l'id ${id} n'existe pas ou a déjà était supprimé`); 
         }
-
-
-
     }
 
 };
