@@ -56,6 +56,10 @@ class Boardgame {
         return new Boardgame(rows[0]);
     }
 
+    /** 
+    * fonction non statique car propre à chaque instance
+    * @param {json} data - Objet json venant modifier la donnée existante
+    */
     async updateById(data) {
         
         const { rows }= await db.query(`SELECT * FROM update_boardgame($1,$2);`,[data,this.id]);
@@ -66,7 +70,7 @@ class Boardgame {
         return new Boardgame(rows[0]);
     }
 
-    // pas statique car propre à chaque instance
+    // fonction non statique car propre à chaque instance
     async save() {
         // props de this => insérer une ligne dans la bdd
         const { rows } = await db.query(`SELECT * FROM new_boardgame($1);`, [this]); // minAge
@@ -74,6 +78,8 @@ class Boardgame {
         this.id = rows[0].id;
     }
 
+
+    // fonction non statique car propre à chaque instance
       async deleteById() {
 
 
