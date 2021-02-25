@@ -10,7 +10,7 @@ GET {{baseUrl}}/boardgames
 
 
 ### GET /boardgames/:id
-GET {{baseUrl}}/boardgames/6
+GET {{baseUrl}}/boardgames/3
 
 
 
@@ -19,7 +19,7 @@ POST {{baseUrl}}/boardgames
 Content-Type: application/json
 
 {
-    "name": "mord",
+    "name": "uno",
     "minAge": "8",
     "minPlayers": "2",
     "maxPlayers": "6",
@@ -35,7 +35,7 @@ Content-Type: application/json
 
 
 ### PUT /boardgames/:id
-PUT {{baseUrl}}/boardgames/13
+PUT {{baseUrl}}/boardgames/1
 Content-Type: application/json
 
 {
@@ -58,7 +58,7 @@ DELETE {{baseUrl}}/boardgames/5
 
 
 ### PATCH /boardgames/:id
-PATCH {{baseUrl}}/boardgames/13
+PATCH {{baseUrl}}/boardgames/1
 Content-Type: application/json
 
 {

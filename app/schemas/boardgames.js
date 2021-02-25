@@ -1,5 +1,9 @@
 const Joi = require('joi');
 
+/* 
+mise en place d'un schema correpondant au model boardgame afin que le payload soit filtrés par joi
+enfontion de celui-ci
+*/ 
 const boardgameSchema = Joi.object({
     name: Joi.string().required(),
     minAge: Joi.number().integer().positive().required(),
