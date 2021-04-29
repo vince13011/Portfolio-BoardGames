@@ -10,6 +10,7 @@ Il a pour but de montrer une partie de mes compétences en javaScript côté Bac
 - Redis (cache)
 - Sqitch (migration)
 - Joi (validator)
+- Sanitize-html( protection contre les injections de code)
 
 ## Pour utiliser l'API
  -Clonner le projet  

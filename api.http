@@ -62,9 +62,8 @@ PATCH {{baseUrl}}/boardgames/1
 Content-Type: application/json
 
 {
-    "id" :3,
+    
     "name": "SEAB",
-    "trompette":"caca",
-    "minAge":"6"
+    "minAge":"7"
     
 }
