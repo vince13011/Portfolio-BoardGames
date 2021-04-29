@@ -19,8 +19,9 @@ Il a pour but de montrer une partie de mes compétences en javaScript côté Bac
  https://www.postgresql.org/download/  
  https://redis.io/download  
  https://sqitch.org/download/      
- -créer un fichier .env en se basant sur le fichier .env.example  
- -créer une base de donnée PostgreSQL boardgame
+ -Créer un fichier .env en se basant sur le fichier .env.example  
+ -Créer une base de donnée PostgreSQL boardgame
+ -lancer Redis
    
  ### Ensuite lancer les commandes suivantes dans sa CLI:  
  -npm i  
